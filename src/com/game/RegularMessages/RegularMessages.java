@@ -9,6 +9,14 @@ public final class RegularMessages {
         System.out.println("*****************************************");
         System.out.println("**** A BATTLE IS ABOUT TO TAKE PLACE ****");
         System.out.println("*****************************************");
+    }
+
+    public void moveHeader(){
+            System.out.println("*****************************************");
+            System.out.println("****    A MOVE IS ABOUT TO BE MADE   ****");
+            System.out.println("*****************************************");
 
     }
+
+
 }

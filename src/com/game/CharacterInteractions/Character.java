@@ -122,6 +122,8 @@ public class Character {
         Scanner getDirection = new Scanner(System.in);
         String direction = getDirection.next();
 
+
+        //msg.moveHeader();
         switch (direction){
             case "North":
                 System.out.println("\t" + this.name + " moves North by " + this.walkingSpeed + " moves.");

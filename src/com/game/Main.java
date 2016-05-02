@@ -16,7 +16,7 @@ public class Main {
         hero.moveCharacter();
         enemy.initEnemy();
 
-/*        hero.attack(enemy);
+       hero.attack(enemy);
         enemy.moveCharacter();
         enemy.attack(hero);
         hero.attack(enemy);
@@ -33,7 +33,7 @@ public class Main {
         enemy.attack(hero);
         hero.attack(enemy);
         enemy.moveCharacter();
-        enemy.attack(hero);*/
+        enemy.attack(hero);
 
 
 

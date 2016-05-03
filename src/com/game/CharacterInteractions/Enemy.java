@@ -2,15 +2,16 @@ package com.game.CharacterInteractions;
 
 import java.lang.*;
 import java.util.Random;
+import com.game.RegularMessages.RegularMessages;
 
 /**
  * Created by Shiva on 4/24/2016.
  */
 public class Enemy extends Character {
-    public String[] enemylist = {"Ghoul", "Goblin", "Skeleton", "Bat", "Werewolf"};
-    public double basehealth = 1.0d;
-    Random rand = new Random();
-    Coordinate startingPosition = new Coordinate(rand.nextInt(10), rand.nextInt(10));
+    private String[] enemylist = {"Ghoul", "Goblin", "Skeleton", "Bat", "Werewolf"};
+    private double basehealth = 1.0d;
+    private Random rand = new Random();
+    private Coordinate startingPosition = new Coordinate(rand.nextInt(10), rand.nextInt(10));
 
     public String initEnemy() {
         this.name = enemylist[rand.nextInt(enemylist.length)];
@@ -67,6 +68,7 @@ public class Enemy extends Character {
     public void moveCharacter(){
         String[] directions = {"North", "South", "East", "West"};
         String direction = directions[rand.nextInt(directions.length)];
+        System.out.println(RegularMessages.MOVEHEADER);
 
         switch (direction){
             case "North":
@@ -92,7 +94,7 @@ public class Enemy extends Character {
                 System.out.println("\t" + "No valid movement detected. Please type North, South, East, or West.");
                 break;
         }
-        System.out.println("\t" + this.name + " moves to: (" + this.getCurrentPosition().getXpos() + ", " + this.getCurrentPosition().getYpos() + ")"); ;
+        System.out.println("\t" + this.name + " moves to: (" + this.getCurrentPosition().getXpos() + ", " + this.getCurrentPosition().getYpos() + ")");
 
     }
 

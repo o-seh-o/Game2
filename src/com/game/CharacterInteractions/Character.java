@@ -9,19 +9,19 @@ import com.sun.org.glassfish.gmbal.ManagedObjectManager;
  * Created by Shiva on 4/24/2016.
  */
 
-public class Character {
-    private RegularMessages msg = new RegularMessages();
-    public String name;
+class Character {
+    public RegularMessages msg = new RegularMessages();
+    String name;
     private double health;
     private double attackStrength;
     private double defenseRating;
     private Random rand = new Random();
-    public int walkingSpeed;
+     int walkingSpeed;
     private int characterLevel;
-    public Coordinate currentPosition;
-    private Boolean isAlive;
+    Coordinate currentPosition;
+    private Boolean isAlive = true;
 
-    public Character() {
+    Character() {
     }
 
     private Boolean isAlive(){
@@ -34,51 +34,52 @@ public class Character {
         }
     }
 
-    public void setWalkingSpeed(int walkingSpeed) { this.walkingSpeed = walkingSpeed;}
+     void setWalkingSpeed(int walkingSpeed) { this.walkingSpeed = walkingSpeed;}
 
-    public int getCharacterLevel() {
+     int getCharacterLevel() {
         return characterLevel;
     }
 
-    public void setCharacterLevel(int characterLevel) {
+     void setCharacterLevel(int characterLevel) {
         this.characterLevel = characterLevel;
     }
 
-    public double getHealth() {
+     private double getHealth() {
         return health;
     }
 
-    public void setHealth(double health) {
+    void setHealth(double health) {
         this.health = health;
     }
 
-    public double getAttackStrength() {
+    private double getAttackStrength() {
         return attackStrength;
     }
 
-    public void setAttackStrength(double attackStrength) {
+     void setAttackStrength(double attackStrength) {
         this.attackStrength = attackStrength;
     }
 
-    public double getDefenseRating() {
+    private double getDefenseRating() {
         return defenseRating;
     }
 
-    public void setDefenseRating(double defenseRating) {
+     void setDefenseRating(double defenseRating) {
         this.defenseRating = defenseRating;
     }
 
-    public Coordinate getCurrentPosition() {
+     Coordinate getCurrentPosition() {
         return currentPosition;
     }
 
-    public void setCurrentPosition(Coordinate currentPosition) {
+     void setCurrentPosition(Coordinate currentPosition) {
         this.currentPosition = currentPosition;
     }
 
     public void attack(Character defender) {
+        System.out.println(RegularMessages.BATTLEHEADER);
 
-        msg.battleHeader();
+      //  msg.battleHeader();
      //   while (defender.isAlive()) {
             Diceroll attackDice = new Diceroll();
             int diceroll = attackDice.rolldice();
@@ -120,26 +121,26 @@ public class Character {
 
         System.out.println("What direction do you want to move? North, South, East, or West?");
         Scanner getDirection = new Scanner(System.in);
-        String direction = getDirection.next();
+        String direction = getDirection.next().toLowerCase();
 
-
-        //msg.moveHeader();
+        System.out.println(RegularMessages.MOVEHEADER);
+       // msg.moveHeader();
         switch (direction){
-            case "North":
+            case "north":
                 System.out.println("\t" + this.name + " moves North by " + this.walkingSpeed + " moves.");
                 this.currentPosition.setYpos(this.currentPosition.getYpos()+this.walkingSpeed);
                 break;
-            case "South":
+            case "south":
                 System.out.println("\t" + this.name + " decides to move South by " + this.walkingSpeed + " moves.");
                 this.currentPosition.setYpos(this.currentPosition.getYpos()-this.walkingSpeed);
 
                 break;
-            case "East":
+            case "east":
                 System.out.println("\t" + this.name + " takes a chance on moving East by " + this.walkingSpeed + " moves.");
                 this.currentPosition.setXpos(this.currentPosition.getXpos()+this.walkingSpeed);
 
                 break;
-            case "West":
+            case "west":
                 System.out.println("\t" + this.name + " heads West by " + this.walkingSpeed + " moves.");
                 this.currentPosition.setXpos(this.currentPosition.getXpos()-this.walkingSpeed);
 
@@ -148,7 +149,7 @@ public class Character {
                 System.out.println("\t" + "No valid movement detected. Please type North, South, East, or West.");
                 break;
         }
-        System.out.println("\t" + this.name + " moves to: (" + this.getCurrentPosition().getXpos() + ", " + this.getCurrentPosition().getYpos() + ")"); ;
+        System.out.println("\t" + this.name + " moves to: (" + this.getCurrentPosition().getXpos() + ", " + this.getCurrentPosition().getYpos() + ")");
 
     }
 

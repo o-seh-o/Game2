@@ -8,15 +8,17 @@ import java.util.Scanner;
  */
 public class Hero extends Character {
     Character hero = new Character();
-    Coordinate startingPosition = new Coordinate(0,0);
+    private Coordinate startingPosition = new Coordinate(0,0);
 
 
 
     public void initHero() {
-        System.out.printf("What is the name of your hero? Type it below:\n$> ");
-        Scanner in = new Scanner(System.in);
-        this.name = in.nextLine();
+//        System.out.printf("What is the name of your hero? Type it below:\n$> ");
+//        Scanner in = new Scanner(System.in);
+//        this.name = in.nextLine();
 
+
+        this.name = "Shiva";
         this.setHealth(100);
         this.setAttackStrength(2);
         this.setDefenseRating(1);

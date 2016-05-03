@@ -21,19 +21,6 @@ public class Main {
         enemy.attack(hero);
         hero.attack(enemy);
         enemy.moveCharacter();
-        enemy.attack(hero);
-        hero.attack(enemy);
-        enemy.moveCharacter();
-        enemy.attack(hero);
-        hero.attack(enemy);
-        enemy.moveCharacter();
-        enemy.attack(hero);
-        hero.attack(enemy);
-        enemy.moveCharacter();
-        enemy.attack(hero);
-        hero.attack(enemy);
-        enemy.moveCharacter();
-        enemy.attack(hero);
 
 
 

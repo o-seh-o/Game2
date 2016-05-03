@@ -5,18 +5,15 @@ package com.game.RegularMessages;
  */
 public final class RegularMessages {
 
-    public void battleHeader(){
-        System.out.println("*****************************************");
-        System.out.println("**** A BATTLE IS ABOUT TO TAKE PLACE ****");
-        System.out.println("*****************************************");
-    }
+    public static final String BATTLEHEADER =
+            "*****************************************\n"
+            + "**** A BATTLE IS ABOUT TO TAKE PLACE ****\n"
+            + "*****************************************\n";
 
-    public void moveHeader(){
-            System.out.println("*****************************************");
-            System.out.println("****    A MOVE IS ABOUT TO BE MADE   ****");
-            System.out.println("*****************************************");
 
-    }
-
+    public static final String MOVEHEADER =
+            "*****************************************\n"+
+            "****    A MOVE IS ABOUT TO BE MADE   ****\n"+
+            "*****************************************\n";
 
 }

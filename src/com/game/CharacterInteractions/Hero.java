@@ -1,7 +1,8 @@
 package com.game.CharacterInteractions;
 
+import com.game.Rooms.Coordinate;
+
 import java.lang.*;
-import java.util.Scanner;
 
 /**
  * Created by Shiva on 4/24/2016.

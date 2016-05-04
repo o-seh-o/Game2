@@ -3,19 +3,20 @@ package com.game.CharacterInteractions;
 import java.lang.*;
 import java.util.Random;
 import com.game.RegularMessages.RegularMessages;
+import com.game.Rooms.Coordinate;
 
 /**
  * Created by Shiva on 4/24/2016.
  */
 public class Enemy extends Character {
-    private String[] enemylist = {"Ghoul", "Goblin", "Skeleton", "Bat", "Werewolf"};
-    private double basehealth = 1.0d;
+    private String[] enemyList = {"Ghoul", "Goblin", "Skeleton", "Bat", "Werewolf"};
     private Random rand = new Random();
     private Coordinate startingPosition = new Coordinate(rand.nextInt(10), rand.nextInt(10));
 
     public String initEnemy() {
-        this.name = enemylist[rand.nextInt(enemylist.length)];
-        this.setCharacterLevel(rand.nextInt(3)+1);
+        double basehealth = 1.0d;
+        this.name = enemyList[rand.nextInt(enemyList.length)];
+        this.setCharacterLevel(rand.nextInt(3));
         this.setCurrentPosition(startingPosition);
 
         switch (this.name){

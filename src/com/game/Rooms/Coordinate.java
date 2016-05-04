@@ -1,4 +1,4 @@
-package com.game.CharacterInteractions;
+package com.game.Rooms;
 
 /**
  * Created by Shiva on 5/1/2016.

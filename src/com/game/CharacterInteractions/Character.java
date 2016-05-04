@@ -3,35 +3,24 @@ package com.game.CharacterInteractions;
 import java.util.Random;
 import java.util.Scanner;
 import com.game.RegularMessages.RegularMessages;
-import com.sun.org.glassfish.gmbal.ManagedObjectManager;
+import com.game.Rooms.Coordinate;
 
 /**
  * Created by Shiva on 4/24/2016.
  */
 
 class Character {
-    public RegularMessages msg = new RegularMessages();
     String name;
     private double health;
     private double attackStrength;
     private double defenseRating;
-    private Random rand = new Random();
-     int walkingSpeed;
+   // private Random rand = new Random();
+    int walkingSpeed;
     private int characterLevel;
     Coordinate currentPosition;
     private Boolean isAlive = true;
 
     Character() {
-    }
-
-    private Boolean isAlive(){
-        if (this.getHealth() >= 90){
-            System.out.println(this.name + " has " + this.getHealth() + " HP left.");
-            return true;
-        } else {
-            System.out.println(this.name + " has died.");
-            return false;
-        }
     }
 
      void setWalkingSpeed(int walkingSpeed) { this.walkingSpeed = walkingSpeed;}
@@ -44,7 +33,7 @@ class Character {
         this.characterLevel = characterLevel;
     }
 
-     private double getHealth() {
+     public double getHealth() {
         return health;
     }
 
@@ -79,8 +68,8 @@ class Character {
     public void attack(Character defender) {
         System.out.println(RegularMessages.BATTLEHEADER);
 
-      //  msg.battleHeader();
-     //   while (defender.isAlive()) {
+        //  msg.battleHeader();
+        while (defender.getHealth() >= 0) {
             Diceroll attackDice = new Diceroll();
             int diceroll = attackDice.rolldice();
 
@@ -113,7 +102,8 @@ class Character {
             } else {
                 System.out.println("\n" + this.name + " attacked " + defender.name + ", but the attack missed!\n");
             }
-      //  }
+            //  }
+        }
     }
 
     public void moveCharacter(){
@@ -153,5 +143,18 @@ class Character {
 
     }
 
+
+
+
+    public Boolean isAlive(){
+
+       if (this.getHealth() >= 0){
+            System.out.println("\n"+ this.name + " has " + this.getHealth() + " HP left.");
+            return true;
+        } else {
+            System.out.println("\n"+ this.name + " has " + this.getHealth() + " HP left, and so has died.");
+            return false;
+        }
+    }
 
 }

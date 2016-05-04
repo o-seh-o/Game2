@@ -13,16 +13,26 @@ public class Main {
 
 
         hero.initHero();
-        hero.moveCharacter();
+    //    hero.moveCharacter();
         enemy.initEnemy();
-
+        hero.attack(enemy);
+      //  enemy.moveCharacter();
+    //    enemy.attack(hero);
+/*        hero.attack(enemy);
+        hero.attack(enemy);
+        enemy.moveCharacter();
+        enemy.attack(hero);
+        hero.attack(enemy);
        hero.attack(enemy);
         enemy.moveCharacter();
         enemy.attack(hero);
         hero.attack(enemy);
         enemy.moveCharacter();
+      //  System.out.println(hero.getHealth());
+      //  hero.isAlive();
+       // System.out.println(hero.isAlive());
 
 
-
+*/
     }
 }

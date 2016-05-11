@@ -1,0 +1,34 @@
+Items have a name, a type, and a value.
+
+Items type can be Potion, Weapon, Shield, Decoration, Quest Item, Junk
+
+An  Inventory is a list of Items.
+
+Every Character has an Inventory.
+
+    ENEMIES:
+    Enemies have a fixed number of slots, based on their level.
+    Each Enemy's Inventory cannot grow or shrink.
+    Enemy Inventory is made up of random Items.
+    Enemies cannot add Items to their Inventory.
+    Enemies can drop Items when killed.
+
+    NARRATORS:
+    Narrators have an empty inventory, and have a Inventory that is set to zero slots.
+    Narrators cannot add items to, or remove items from, their Inventory.
+
+    HEROES:
+    Heroes have a starting inventory that is a specified number of slots.
+    The number of slots can grow, as the Hero gets better equipment.
+    The slots are broken up into each Item type.
+    Heroes can add to their Inventory.
+    Heroes can drop items from their Inventory.
+    Heroes can lose all their items when they die.
+
+    SHOPKEEPS:
+    ShopKeeps have a fixed size inventory.
+    ShopKeeps have a random number of Items.
+
+
+
+
